@@ -36,7 +36,10 @@
 					</execution>
 				</executions>
 				<configuration>
-					<mainClass>org.alex859.battleship.model.Battleship</mainClass>
+					<mainClass>org.alex859.battleship.Battleship</mainClass>
+					<arguments>
+					    <argument>ciccio.txt</argument>
+					</arguments>
 				</configuration>
 			</plugin>
 		</plugins>
