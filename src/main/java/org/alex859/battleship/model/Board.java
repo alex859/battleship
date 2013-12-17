@@ -88,6 +88,7 @@ public class Board {
 	@Override
 	public String toString() {
 		StringBuilder builder=new StringBuilder();
+		//TODO Check if it is OK
 		List<Ship> l=new ArrayList<Ship>(shipsMap.values());
 		Collections.sort(l);
 		for(Ship s:l){
