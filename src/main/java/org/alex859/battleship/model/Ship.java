@@ -19,6 +19,12 @@ public class Ship implements Comparable<Ship>{
 	 * An auto increasing ID for the ship. Useful to give an ordered output list of ships
 	 */
 	private int id;
+	
+	/**
+	 * Field used to generate the id of the ship.
+	 */
+	private static int idGen=0;
+	
 	private static Pattern pattern=Pattern.compile("\\s?\\((\\d+),\\s(\\d+)\\,\\s(\\D)\\)");
 	
 	/**
@@ -34,6 +40,7 @@ public class Ship implements Comparable<Ship>{
 			String o=m.group(3);
 			this.position=new Position(x, y);
 			this.orientation=Orientation.decode(o);
+			this.id=idGen++;
 		}else{
 			throw new InvalidShipFormatException(str);
 		}
@@ -74,7 +81,7 @@ public class Ship implements Comparable<Ship>{
 	}
 
 	public int compareTo(Ship o) {
-		return this.id<o.id ? 1 :-1;
+		return this.id>o.id ? 1 :-1;
 	}
 	
 	
