@@ -1,0 +1,11 @@
+Assumptions and explanations
+
+Assume that inputs must be exactly as in the example, with the same spaces, that is (5,5) is an invalid input for the board dimensions
+I try to decouple the input strings and the Ship class sending objects (Actions, Positions and Orientations) to it. In this way the code is clearer and it is easier to validate the input in a centralized way.
+If a ship has an invalid position, it is ignored, i.e. it is not added to the board
+If an action is relative to a position without a ship, it is ignored.
+If an action has a code different from LMR, it is ignored
+
+
+
+
