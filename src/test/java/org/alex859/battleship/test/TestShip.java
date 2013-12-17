@@ -69,15 +69,6 @@ public class TestShip {
 		assertEquals("(1, 1, N) SUNK", ship.toString());
 	}
 	
-	@Test(expected=InvalidPositionException.class)
-	public void goToNegativeCoordinates(){
-		Action move=new MoveForward();
-		Action spinLeft=new SpinLeft();
-		ship.execute(spinLeft);
-		ship.execute(move);
-		ship.execute(move);
-	}
-	
 	@Test(expected=InvalidShipFormatException.class)
 	public void testWrongFormat(){
 		ship=new Ship("(1,A, f)");

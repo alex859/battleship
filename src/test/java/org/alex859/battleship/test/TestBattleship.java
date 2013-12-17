@@ -1,9 +1,12 @@
 package org.alex859.battleship.test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
+import org.alex859.battleship.Battleship;
 import org.alex859.battleship.exceptions.InvalidBattleshipFormatException;
-import org.alex859.battleship.model.Battleship;
 import org.alex859.battleship.model.Orientation;
 import org.alex859.battleship.model.Position;
 import org.alex859.battleship.model.Ship;
