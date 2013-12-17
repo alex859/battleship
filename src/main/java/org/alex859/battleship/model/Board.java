@@ -88,11 +88,14 @@ public class Board {
 	@Override
 	public String toString() {
 		StringBuilder builder=new StringBuilder();
-		//TODO Check if it is OK
+		//Order the ships before printing them
 		List<Ship> l=new ArrayList<Ship>(shipsMap.values());
 		Collections.sort(l);
-		for(Ship s:l){
-			builder.append(s.toString()).append("\n");
+		if(l.size()>0){
+			builder.append(l.get(0).toString());
+		}
+		for(int i=1;i<l.size();i++){
+			builder.append("\n").append(l.get(i).toString());
 		}
 		return builder.toString();
 	}
