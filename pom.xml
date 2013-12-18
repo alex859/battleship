@@ -38,7 +38,7 @@
 				<configuration>
 					<mainClass>org.alex859.battleship.Battleship</mainClass>
 					<arguments>
-					    <argument>ciccio.txt</argument>
+					    <argument>test.txt</argument>
 					</arguments>
 				</configuration>
 			</plugin>
