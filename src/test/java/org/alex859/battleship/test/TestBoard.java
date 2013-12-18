@@ -1,12 +1,10 @@
 package org.alex859.battleship.test;
 
 import static org.junit.Assert.*;
-import static org.hamcrest.CoreMatchers.*;
 
 import org.alex859.battleship.exceptions.InvalidBoardFormatException;
 import org.alex859.battleship.exceptions.InvalidPositionException;
 import org.alex859.battleship.model.Board;
-import org.alex859.battleship.model.Orientation;
 import org.alex859.battleship.model.Position;
 import org.alex859.battleship.model.Ship;
 import org.junit.Before;

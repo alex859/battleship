@@ -3,7 +3,6 @@ package org.alex859.battleship.test;
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
 
-import org.alex859.battleship.exceptions.InvalidPositionException;
 import org.alex859.battleship.model.Position;
 import org.junit.Test;
 

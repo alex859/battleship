@@ -1,7 +1,5 @@
 package org.alex859.battleship.model;
 
-import org.alex859.battleship.exceptions.InvalidPositionException;
-
 /**
  * Models the position of a ship, that is its coordinates
  * @author alex859

@@ -7,7 +7,6 @@ import org.alex859.battleship.actions.MoveForward;
 import org.alex859.battleship.actions.Shoot;
 import org.alex859.battleship.actions.SpinLeft;
 import org.alex859.battleship.actions.SpinRight;
-import org.alex859.battleship.exceptions.InvalidPositionException;
 import org.alex859.battleship.exceptions.InvalidShipFormatException;
 import org.alex859.battleship.exceptions.UnrecognizedOrientationException;
 import org.alex859.battleship.model.Orientation;

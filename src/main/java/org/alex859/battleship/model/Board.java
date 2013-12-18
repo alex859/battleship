@@ -3,7 +3,6 @@ package org.alex859.battleship.model;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
@@ -24,7 +23,7 @@ public class Board {
 	private static Pattern pattern=Pattern.compile("\\((\\d+),\\s(\\d+)\\)");
 	
 	/**
-	 * Creates a board with the dimensions given by the string.
+	 * Create a board with the dimensions given by the string.
 	 * @param str The input string MUST have the format (X, Y) where X and Y are integer numbers
 	 */
 	public Board(String str){
@@ -38,10 +37,10 @@ public class Board {
 	}
 	
 	/**
-	 * Checks if the given position is valid in the board:
+	 * Check if the given position is valid in the board:
 	 * a position is valid if it is inside the board and if is free (that is no ship is already there)
 	 * @param p The position to be tested
-	 * @return true if the position is valid, false otherwise
+	 * @return true If the position is valid, false otherwise
 	 */
 	public boolean check(Position p){
 		if(p.getX()<0 || p.getY()<0 || p.getX()>this.maxX || p.getY()>this.maxY || shipsMap.containsKey(p)){
@@ -56,7 +55,7 @@ public class Board {
 	}
 	
 	/**
-	 * Adds a ship to the board after checking its position validity
+	 * Adds a ship to the board after checking the validity of its position
 	 * @param ship The ship to be added
 	 * @throws InvalidPositionException 
 	 */

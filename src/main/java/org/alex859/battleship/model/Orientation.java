@@ -25,7 +25,7 @@ public enum Orientation {
 	}
 	
 	/**
-	 * 
+	 * Get the orientation from a letter
 	 * @param str
 	 * @return The orientation associated with the string passed as parameter
 	 */

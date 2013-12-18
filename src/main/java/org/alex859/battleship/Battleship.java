@@ -1,7 +1,6 @@
 package org.alex859.battleship;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -25,7 +24,7 @@ import org.alex859.battleship.model.Ship;
 import org.apache.log4j.Logger;
 
 /**
- * Tha main class of the application. Contains validation methods against the input and the logic
+ * Tha main class of the application. Contains validation and game logic
  * of the game
  * @author alex859
  *
@@ -74,7 +73,7 @@ public class Battleship {
 	 * - in the fist line the dimensions of the board (i.e. (5, 5))
 	 * - in the second line the description of the ships (i.e. (1, 2, E) (2, 2, W))
 	 * - a list of actions to be performed (i.e. (1, 2) LMRM or simply (1, 2) for the shoot)
-	 * @param str
+	 * @param str The string describing the game
 	 */
 	public Battleship(String str){
 		if(str.matches(pattern)){
@@ -116,8 +115,10 @@ public class Battleship {
 				Position p=new Position(x, y);
 				//first of all check if the position contains a ship
 				Ship ship=this.board.getShipsMap().get(p);
+				//we can run the action only if we have found
 				if(ship!=null){
-					//now have to check if there is the letter array
+					//now we have to check if there is the letter array
+					//to understand if it is a shot or not
 					String actionLetters=actionMatcher.group(3);
 					Action action=null;
 					if(actionLetters.length()>0){
@@ -133,7 +134,7 @@ public class Battleship {
 									//try to add the ship in the newly computed position
 									try {
 										this.board.addShip(ship);
-										//if the ship has been moved, we can remove the old one
+										//the ship has been moved: we remove the old one
 										this.board.removeShipAt(oldPosition);
 									} catch (InvalidPositionException e) {
 										//rollback to the old position
@@ -168,11 +169,10 @@ public class Battleship {
 	    try {
 	        StringBuilder sb = new StringBuilder();
 	        String line = br.readLine();
-
-	        while (line != null) {
+	        sb.append(line);
+	        while ((line=br.readLine()) != null) {
+	        	sb.append("\n");
 	            sb.append(line);
-	            sb.append("\n");
-	            line = br.readLine();
 	        }
 	        return sb.toString();
 	    } finally {
@@ -184,7 +184,7 @@ public class Battleship {
 	/**
 	 * Reads the battleship description from the command line:
 	 * 
-	 * @param args
+	 * @param args A single argument: the name of the file containing the battleship description
 	 */
 	public static void main(String[] args) {
 		if(args.length==1){
@@ -198,6 +198,12 @@ public class Battleship {
 				System.out.println("File not found: "+filename);
 			} catch(IOException e){
 				System.out.println("Error reading file: "+filename);
+			} catch(InvalidBattleshipFormatException e){
+				System.out.println("Invalid Battleship format");
+			} catch (Exception e){
+				System.out.println(e.getMessage());
+			} finally{
+				System.out.println("Merry Christmas!");
 			}
 		}else{
 			System.out.println("You need to specify an input file");

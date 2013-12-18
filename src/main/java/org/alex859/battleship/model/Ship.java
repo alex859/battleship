@@ -70,6 +70,10 @@ public class Ship implements Comparable<Ship>{
 		this.sunk = sunk;
 	}
 
+	/**
+	 * Run the action passed as parameter on this ship
+	 * @param action The action to be performed
+	 */
 	public void execute(Action action){
 		action.exec(this);
 	}

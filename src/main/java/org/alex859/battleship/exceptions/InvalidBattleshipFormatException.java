@@ -2,7 +2,7 @@ package org.alex859.battleship.exceptions;
 
 
 /**
- * Exception thrown when the given string for the battleship is not valid
+ * Exception thrown when the given game description string is not valid
  * @author alex859
  *
  */
