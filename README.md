@@ -46,6 +46,13 @@ The output for each ship should be its final coordinates and heading and if they
 * If an action has a code different from LMR, it is ignored
 * If an action leads a ship in an invalid position (i.e. outside the board or in a position where there is already another ship), it is ignored and we continue with the next action
 
+##Usage
+The file pom.xml contains the reference to the test input file test.txt as a command line argument. To run the project:
+
+```
+mvn exec:java
+```
+
 
 
 
