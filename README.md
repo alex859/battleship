@@ -44,7 +44,7 @@ The output for each ship should be its final coordinates and heading and if they
 * If a ship has an invalid position, it is ignored, i.e. it is not added to the board
 * If an action is relative to a position without a ship, it is ignored.
 * If an action has a code different from LMR, it is ignored
-I try to decouple the input strings and the Ship class sending objects (Actions, Positions and Orientations) to it. In this way the code is clearer and it is easier to validate the input in a centralized way.
+* If an action leads a ship in an invalid position (i.e. outside the board or in a position where there is already another ship), it is ignored and we continue with the next action
 
 
 
